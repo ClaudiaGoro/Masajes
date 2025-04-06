@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Precios - Claudia Goro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Minion+Variable+Concept:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Minion Variable Concept', serif;
+            background-color: #A7C6B3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('/mnt/data/nenufar.png') no-repeat center;
+            background-size: 50%;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background-color: #8BAA9A;
+            color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid #5E7D6D;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.4em;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .language-button {
+            padding: 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .language-button img {
+            width: 30px;
+            height: auto;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            background-color: #8BAA9A;
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            background-color: #5E7D6D;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 60%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+
+        th {
+            background-color: #8BAA9A;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #E2F0E8;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nota {
+            margin-top: 20px;
+            font-size: 1.4rem;
+            color: #5E7D6D;
+            font-weight: bold;
+            background: #C2D6C3;
+            padding: 10px 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <script>
+        // Función para cambiar el idioma
+        function changeLanguage(lang) {
+            // Texto en español
+            const esText = {
+                headerTitle: "CLAUDIA GORO",
+                headerSubtitle: "Masajes relajantes para tu bienestar",
+                navInicio: "Inicio",
+                navServicios: "Servicios",
+                navPrecios: "Precios",
+                navContacto: "Contacto",
+                duration1Hour: "1 hora",
+                duration30Min: "30 minutos",
+                duration40Min: "40 minutos*",
+                price1Hour: "65€",
+                price30Min: "35€",
+                price40Min: "40€",
+                note: "* Solo para reflexología podal.",
+                durationText: "Duración",
+                priceText: "Precio"
+            };
+
+            // Texto en inglés
+            const enText = {
+                headerTitle: "CLAUDIA GORO",
+                headerSubtitle: "Relaxing massages for your well-being",
+                navInicio: "Home",
+                navServicios: "Services",
+                navPrecios: "Prices",
+                navContacto: "Contact",
+                duration1Hour: "1 hour",
+                duration30Min: "30 minutes",
+                duration40Min: "40 minutes*",
+                price1Hour: "$65",
+                price30Min: "$35",
+                price40Min: "$40",
+                note: "* Only for foot reflexology.",
+                durationText: "Duration",
+                priceText: "Price"
+            };
+
+            // Selección del texto según el idioma
+            const text = lang === 'es' ? esText : enText;
+
+            // Cambiar el contenido del header
+            document.getElementById('headerTitle').textContent = text.headerTitle;
+            document.getElementById('headerSubtitle').textContent = text.headerSubtitle;
+
+            // Cambiar los textos de los botones de navegación
+            document.getElementById('navInicio').textContent = text.navInicio;
+            document.getElementById('navServicios').textContent = text.navServicios;
+            document.getElementById('navPrecios').textContent = text.navPrecios;
+            document.getElementById('navContacto').textContent = text.navContacto;
+
+            // Cambiar los encabezados de la tabla
+            document.getElementById('durationText').textContent = text.durationText;
+            document.getElementById('priceText').textContent = text.priceText;
+
+            // Cambiar los precios de la tabla
+            document.getElementById('duration1Hour').textContent = text.duration1Hour;
+            document.getElementById('duration30Min').textContent = text.duration30Min;
+            document.getElementById('duration40Min').textContent = text.duration40Min;
+            document.getElementById('price1Hour').textContent = text.price1Hour;
+            document.getElementById('price30Min').textContent = text.price30Min;
+            document.getElementById('price40Min').textContent = text.price40Min;
+            document.getElementById('note').textContent = text.note;
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 id="headerTitle">CLAUDIA GORO</h1>
+        <p id="headerSubtitle">Masajes relajantes para tu bienestar</p>
+        <button class="language-button" onclick="changeLanguage('es')">
+            <img src="imagenes/ES-1x1.5_3.png" alt="Español">
+        </button>
+        <button class="language-button" onclick="changeLanguage('en')">
+            <img src="imagenes/piratas.png" alt="English">
+        </button>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+    <ul>
+        <li><a href="Inicio.html" id="navInicio">Inicio</a></li>
+        <li><a href="servicios.html" id="navServicios">Servicios</a></li>
+        <li><a href="precios.html" id="navPrecios">Precios</a></li>
+        <li><a href="contacto.html" id="navContacto">Contacto</a></li>
+    </ul>
+</nav>
+
+
+    <!-- Price Table Section -->
+    <table>
+        <tr>
+            <th id="durationText">Duración</th>
+            <th id="priceText">Precio</th>
+        </tr>
+        <tr>
+            <td id="duration1Hour">1 hora</td>
+            <td id="price1Hour">65€</td>
+        </tr>
+        <tr>
+            <td id="duration30Min">30 minutos</td>
+            <td id="price30Min">35€</td>
+        </tr>
+        <tr>
+            <td id="duration40Min">40 minutos*</td>
+            <td id="price40Min">40€</td>
+        </tr>
+    </table>
+    <p class="nota" id="note">* Solo para reflexología podal.</p>
+</body>
+</html>

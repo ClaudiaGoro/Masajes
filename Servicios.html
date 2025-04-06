@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> - Claudia Goro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Minion+Variable+Concept:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Minion Variable Concept', serif;
+            background-color: #A7C6B3;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: auto;
+            min-height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('imagenes/nenufar.png') no-repeat center;
+            background-size: 50%;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+            background-color: #8BAA9A;
+            color: #ffffff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid #5E7D6D;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.6em;
+            color: white;
+            margin-top: 10px;
+        }
+
+        .language-button {
+            padding: 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .language-button img {
+            width: 30px;
+            height: auto;
+        }
+
+        nav {
+            margin: 20px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            background-color: #8BAA9A;
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            background-color: #5E7D6D;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #puntos {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+            width: 90%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        .punto {
+            background-color: #ffffff;
+            border-radius: 15px;
+            width: 100%;
+            height: 200px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            padding: 10px;
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+        }
+
+        .punto:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .punto img {
+            width: 55%;
+            height: 90%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .punto img:hover {
+            transform: scale(1.1);
+        }
+
+        .punto p {
+            font-size: 1.4em;
+            color: #5E7D6D;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            #puntos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 id="headerTitle">CLAUDIA GORO</h1>
+        <p id="headerSubtitle">Masajes relajantes para tu bienestar</p>
+        <button class="language-button" onclick="changeLanguage('es')">
+            <img src="imagenes/ES-1x1.5_3.png" alt="Español">
+        </button>
+        <button class="language-button" onclick="changeLanguage('en')">
+            <img src="imagenes/piratas.png" alt="English">
+        </button>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+    <ul>
+        <li><a href="Inicio.html" id="navInicio">Inicio</a></li>
+        <li><a href="servicios.html" id="navServicios">Servicios</a></li>
+        <li><a href="precios.html" id="navPrecios">Precios</a></li>
+        <li><a href="contacto.html" id="navContacto">Contacto</a></li>
+    </ul>
+</nav>
+
+    <!-- Puntos con imágenes debajo del encabezado -->
+    <section id="puntos">
+        <div class="punto">
+            <img src="imagenes/high-angle-man-relaxing-spa.jpg" alt="Masaje Peregrino">
+            <p id="punto1">Masaje Peregrino</p>
+        </div>
+        <div class="punto">
+            <img src="imagenes/masaje_deportivo.jpg" alt="Masaje Deportivo">
+            <p id="punto2">Masaje Deportivo</p>
+        </div>
+        <div class="punto">
+            <img src="imagenes/3.jpg" alt="Masaje Relajante">
+            <p id="punto3">Masaje Relajante</p>
+        </div>
+        <div class="punto">
+            <img src="imagenes/4.jpg" alt="Reflexología Podal">
+            <p id="punto4">Reflexología Podal</p>
+        </div>
+        <div class="punto">
+            <img src="imagenes/cover-masaje-sueco.png.jpg" alt="Masaje Sueco">
+            <p id="punto5">Masaje Sueco</p>
+        </div>
+        <div class="punto">
+            <img src="imagenes/shiatsu-3-768x511-1.jpg" alt="Masaje Shiatsu">
+            <p id="punto6">Masaje Shiatsu</p>
+        </div>
+        <div class="punto">
+            <img src="imagenes/aromaterapia-usos.jpg" alt="Masaje con aromaterapia">
+            <p id="punto7">Masaje con aromaterapia</p>
+        </div>
+        <div class="punto">
+            <img src="imagenes/vendaje-neuromuscular-rodilla-mi.jpg" alt="Vendaje Neuromuscular">
+            <p id="punto8">Vendaje Neuromuscular</p>
+        </div>
+        <!-- Nuevas opciones añadidas -->
+        <div class="punto">
+            <img src="imagenes/fotos-blog.jpg" alt="Masaje Terapéutico">
+            <p id="punto9">Masaje Linfático</p>
+        </div>
+        <div class="punto">
+            <img src="imagenes/98.jpg" alt="Masaje con piedras calientes">
+            <p id="punto10">Masaje con ventosa</p>
+        </div>
+    </section>
+
+    <script>
+        function changeLanguage(language) {
+            const texts = {
+                es: {
+                    headerTitle: "CLAUDIA GORO",
+                    headerSubtitle: "Masajes relajantes para tu bienestar",
+                    navInicio: "Inicio",
+                    navServicios: "Servicios",
+                    navPrecios: "Precios",
+                    navContacto: "Contacto",
+                    punto1: "Masaje Peregrino",
+                    punto2: "Masaje Deportivo",
+                    punto3: "Masaje Relajante",
+                    punto4: "Reflexología Podal",
+                    punto5: "Masaje Sueco",
+                    punto6: "Masaje Shitsu",
+                    punto7: "Masaje con aromaterapia",
+                    punto8: "Vendaje Neuromuscular",
+                    punto9: "Masaje Terapéutico",  <!-- Nueva opción -->
+                    punto10: "Masaje con piedras calientes"  <!-- Nueva opción -->
+                },
+                en: {
+                    headerTitle: "CLAUDIA GORO",
+                    headerSubtitle: "Relaxing massages for your well-being",
+                    navInicio: "Home",
+                    navServicios: "Services",
+                    navPrecios: "Prices",
+                    navContacto: "Contact",
+                    punto1: "Pilgrim Massage",
+                    punto2: "Sports Massage",
+                    punto3: "Relaxing Massage",
+                    punto4: "Reflexology Foot",
+                    punto5: "Swedish Massage",
+                    punto6: "Shitsu Massage",
+                    punto7: "Aromatherapy Massage",
+                    punto8: "Neuromuscular Taping",
+                    punto9: "Therapeutic Massage",  <!-- New option -->
+                    punto10: "Hot Stone Massage"  <!-- New option -->
+                }
+            };
+
+            const selectedTexts = texts[language];
+
+            document.getElementById("headerTitle").textContent = selectedTexts.headerTitle;
+            document.getElementById("headerSubtitle").textContent = selectedTexts.headerSubtitle;
+            document.getElementById("navInicio").textContent = selectedTexts.navInicio;
+            document.getElementById("navServicios").textContent = selectedTexts.navServicios;
+            document.getElementById("navPrecios").textContent = selectedTexts.navPrecios;
+            document.getElementById("navContacto").textContent = selectedTexts.navContacto;
+            document.getElementById("punto1").textContent = selectedTexts.punto1;
+            document.getElementById("punto2").textContent = selectedTexts.punto2;
+            document.getElementById("punto3").textContent = selectedTexts.punto3;
+            document.getElementById("punto4").textContent = selectedTexts.punto4;
+            document.getElementById("punto5").textContent = selectedTexts.punto5;
+            document.getElementById("punto6").textContent = selectedTexts.punto6;
+            document.getElementById("punto7").textContent = selectedTexts.punto7;
+            document.getElementById("punto8").textContent = selectedTexts.punto8;
+            document.getElementById("punto9").textContent = selectedTexts.punto9; <!-- New -->
+            document.getElementById("punto10").textContent = selectedTexts.punto10; <!-- New -->
+        }
+    </script>
+</body>
+</html>

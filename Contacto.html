@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Claudia Goro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Minion+Variable+Concept:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Minion Variable Concept', serif;
+            background-color: #A7C6B3;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: url('/mnt/data/nenufar.png') no-repeat center;
+            background-size: 50%;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 30px 0;
+            background-color: #8BAA9A;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid #5E7D6D;
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        header p {
+            font-size: 1.4em;
+            margin-top: 10px;
+        }
+
+        .language-buttons {
+            margin-top: 10px;
+        }
+
+        .language-buttons img {
+            width: 30px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .language-buttons img:hover {
+            transform: scale(1.2);
+        }
+
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            background-color: #8BAA9A;
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            background-color: #5E7D6D;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-section {
+            padding: 40px;
+            width: 80%;
+            max-width: 1100px;
+            margin-top: 40px;
+            background: white;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .contact-info div {
+            width: 30%;
+        }
+
+        .contact-info div h3 {
+            font-size: 1.8em;
+            color: #5E7D6D;
+        }
+
+        .contact-info div p {
+            font-size: 1.2em;
+            color: #5E7D6D;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 1.2em;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .contact-form button {
+            padding: 15px;
+            font-size: 1.2em;
+            background-color: #8BAA9A;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .contact-form button:hover {
+            background-color: #5E7D6D;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 id="headerTitle">CLAUDIA GORO</h1>
+        <p id="headerSubtitle">Masajes relajantes para tu bienestar</p>
+        <div class="language-buttons">
+            <img src="imagenes/ES-1x1.5_3.png" alt="Español" onclick="changeLanguage('es')">
+            <img src="imagenes/piratas.png" alt="Inglés" onclick="changeLanguage('en')">
+        </div>
+    </header>
+
+    <!-- Navigation -->
+   <nav>
+    <ul>
+        <li><a href="Inicio.html" id="navInicio">Inicio</a></li>
+        <li><a href="servicios.html" id="navServicios">Servicios</a></li>
+        <li><a href="precios.html" id="navPrecios">Precios</a></li>
+        <li><a href="contacto.html" id="navContacto">Contacto</a></li>
+    </ul>
+</nav>
+
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="contact-info">
+            <!-- Contact Information -->
+            <div>
+                <h3>Email</h3>
+                <p>compostela619@gmail.com</p>
+            </div>
+            <div>
+                <h3>Teléfono</h3>
+                <p>670 62 01 44</p>
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <h2>Envíanos un mensaje</h2>
+        <form class="contact-form" action="mailto:compostela619@gmail.com" method="post" enctype="text/plain">
+            <input type="text" name="name" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu correo electrónico" required>
+            <input type="text" name="subject" placeholder="Asunto" required>
+            <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script>
+        function changeLanguage(language) {
+            if (language === 'es') {
+                document.getElementById("headerTitle").textContent = "CLAUDIA GORO";
+                document.getElementById("headerSubtitle").textContent = "Masajes relajantes para tu bienestar";
+                document.getElementById("navInicio").textContent = "Inicio";
+                document.getElementById("navServicios").textContent = "Servicios";
+                document.getElementById("navPrecios").textContent = "Precios";
+                document.getElementById("navContacto").textContent = "Contacto";
+                document.querySelector("h2").textContent = "Envíanos un mensaje";
+                document.querySelector("button").textContent = "Enviar";
+            } else if (language === 'en') {
+                document.getElementById("headerTitle").textContent = "CLAUDIA GORO";
+                document.getElementById("headerSubtitle").textContent = "Relaxing massages for your well-being";
+                document.getElementById("navInicio").textContent = "Home";
+                document.getElementById("navServicios").textContent = "Services";
+                document.getElementById("navPrecios").textContent = "Prices";
+                document.getElementById("navContacto").textContent = "Contact";
+                document.querySelector("h2").textContent = "Send us a message";
+                document.querySelector("button").textContent = "Send";
+            }
+        }
+    </script>
+</body>
+</html>
+

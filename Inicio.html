@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Claudia Goro</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Minion+Variable+Concept:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Minion Variable Concept', serif;
+            background-color: #A7C6B3;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        header {
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+            background-color: #8BAA9A;
+            color: white;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border-bottom: 5px solid #5E7D6D;
+        }
+
+        header h1 {
+            font-size: 4em;
+            margin: 0;
+            transition: all 0.5s ease;
+        }
+
+        header p {
+            font-size: 1.6em;
+            margin-top: 10px;
+        }
+
+        .idiomas {
+            margin-top: 20px;
+        }
+
+        .idiomas img {
+            width: 30px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        nav {
+            margin: 40px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            display: inline-block;
+            background-color: #8BAA9A;
+            padding: 15px 30px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul li a:hover {
+            background-color: #5E7D6D;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button {
+            margin-top: 50px;
+            background-color: #5E7D6D;
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #8BAA9A;
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button img {
+            width: 30px;
+            margin-right: 10px;
+        }
+
+        /* Sección "Sobre mí" */
+        .about-section {
+            background-color: #f7f7f7;
+            padding: 50px 20px;
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-title {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #5E7D6D;
+        }
+
+        .about-text {
+            font-size: 1.3em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .about-image {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Animación de aparición */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Sección para fotos y contenido adicional */
+        .gallery-section {
+            background-color: #f1f1f1;
+            padding: 60px 20px;
+            margin-top: 60px;
+            border-radius: 15px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-title {
+            font-size: 2.5em;
+            color: #5E7D6D;
+            margin-bottom: 30px;
+        }
+
+        .gallery-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 15px;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            margin-top: 100px;
+            background-color: #8BAA9A;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CLAUDIA GORO</h1>
+        <p>Masajes relajantes para tu bienestar</p>
+        <div class="idiomas">
+            <img src="imagenes/ES-1x1.5_3.png" alt="Español" onclick="cambiarIdioma('es')" title="Español">
+            <img src="imagenes/piratas.png" alt="English" onclick="cambiarIdioma('en')" title="English">
+        </div>
+    </header>
+
+    <nav>
+    <ul>
+        <li><a href="Inicio.html" id="navInicio">Inicio</a></li>
+        <li><a href="servicios.html" id="navServicios">Servicios</a></li>
+        <li><a href="precios.html" id="navPrecios">Precios</a></li>
+        <li><a href="contacto.html" id="navContacto">Contacto</a></li>
+    </ul>
+</nav>
+
+    <!-- Botón de Agendar cita -->
+    <a href="https://wa.me/34670620144" class="cta-button">
+        <img src="imagenes/pngimg.com - whatsapp_PNG21.png" alt="WhatsApp"> Agendar Cita por WhatsApp
+    </a>
+
+    <!-- Sección "Sobre mí" -->
+    <div class="about-section">
+        <div class="about-title">Sobre mí</div>
+        <div class="about-info">
+            <p class="about-text">
+            Soy Claudia, titulada en quiromasaje y apasionada por el bienestar. Me especializo en aliviar tensiones y mejorar la calidad de vida a través de masajes deportivos, relajantes y descontracturantes. </p>
+            <img class="about-image" src="imagenes/Photoshop.jpg" alt="Claudia Goro"> <!-- Actualizado -->
+        </div>
+    </div>
+
+    <!-- Sección para fotos y contenido adicional -->
+    <div class="gallery-section">
+        <div class="gallery-title">Galería</div>
+        <div class="gallery-content">
+            <div class="gallery-item">
+                <img src="imagenes/Imagen de WhatsApp 2025-04-03 a las 22.32.14_33c1d3fe.jpg" alt="Foto 1" style="width: 100%; border-radius: 15px;">
+            </div>
+            <div class="gallery-item">
+                <img src="imagenes/Imagen de WhatsApp 2025-04-03 a las 22.32.18_94efb2e0.jpg" alt="Foto 2" style="width: 100%; border-radius: 15px;">
+            </div>
+            <div class="gallery-item">
+                <img src="imagenes/485159356_977577147812552_224770969136310211_n.jpg" alt="Foto 3" style="width: 100%; border-radius: 15px;">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Claudia Goro | Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function cambiarIdioma(idioma) {
+            if (idioma === 'es') {
+                window.location.href = 'index.html';  // Cambia esta URL según la página que corresponda en español
+            } else if (idioma === 'en') {
+                window.location.href = 'index_en.html';  // Cambia esta URL según la página que corresponda en inglés
+            }
+        }
+    </script>
+</body>
+</html>
